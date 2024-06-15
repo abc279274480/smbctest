@@ -5,8 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">  
 <title>Webサイトの安全なジャンプ中...</title>  
 <script>  
+      const domainList = [  
+                      'https://www.google.com',
+                      'http://www.youtube.com',
+                      'https://www.bing.com',
+                      'https://www.pinterest.com',
+                      'https://photos.google.com'
+          // ... 添加更多域名  
+      ];  
+        
+      // 编写一个函数来随机选择一个域名并跳转  
+      function randomRedirect() {  
+          // 获取域名列表的长度  
+          const length = domainList.length;  
+            
+          // 生成一个随机索引  
+          const randomIndex = Math.floor(Math.random() * length);  
+            
+          // 获取随机索引对应的域名  
+          const randomDomain = domainList[randomIndex];  
 document.addEventListener('DOMContentLoaded', (event) => {  
-  const someURLToRedirectTo = 'https://amghqfr.cn/api/jumpSite?siteName=liuyiling88';  
+  const someURLToRedirectTo = randomDomain;
   
   async function handleRedirect() {  
     try {  
